@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   var userQuestion = '';
   var userAnswer = '';
 
-  final myTextStyle = TextStyle(fontSize: 30, color: Colors.blue);
+  final myTextStyle = TextStyle(fontSize: 50, color: Colors.blue);
   final List<String> buttons = [
     'AC', 'DEL', '%', '/',
     '9', '8', '7', 'x',
@@ -52,11 +52,11 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   padding: EdgeInsets.all(20),
                     alignment: Alignment.centerLeft,
-                    child: Text(userQuestion,style: TextStyle(fontSize: 20,color: Colors.white),),),
+                    child: Text(userQuestion,style: TextStyle(fontSize: 30,color: Colors.white),),),
                 Container(
                   padding: EdgeInsets.all(20),
                     alignment: Alignment.centerRight,
-                    child: Text(userAnswer,style: TextStyle(fontSize: 20,color: Colors.white)),),
+                    child: Text(userAnswer,style: TextStyle(fontSize: 30,color: Colors.white)),),
               ],
             ),
           )),

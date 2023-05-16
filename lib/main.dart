@@ -27,9 +27,9 @@ class _HomePageState extends State<HomePage> {
   var userQuestion = '';
   var userAnswer = '';
 
-  final myTextStyle = TextStyle(fontSize: 30, color: Colors.teal[900]);
+  final myTextStyle = TextStyle(fontSize: 30, color: Colors.blue);
   final List<String> buttons = [
-    'C', 'DEL', '%', '/',
+    'AC', 'DEL', '%', '/',
     '9', '8', '7', 'x',
     '6', '5', '4', '-',
     '3', '2', '1', '+',
@@ -39,11 +39,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.tealAccent[100],
+        backgroundColor: Colors.black,
         body: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           Expanded(
               child: Container(
-            color: Colors.tealAccent[50],
+            color: Colors.black,
             child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
@@ -52,16 +52,16 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   padding: EdgeInsets.all(20),
                     alignment: Alignment.centerLeft,
-                    child: Text(userQuestion,style: TextStyle(fontSize: 20),),),
+                    child: Text(userQuestion,style: TextStyle(fontSize: 20,color: Colors.white),),),
                 Container(
                   padding: EdgeInsets.all(20),
                     alignment: Alignment.centerRight,
-                    child: Text(userAnswer,style: TextStyle(fontSize: 20)),),
+                    child: Text(userAnswer,style: TextStyle(fontSize: 20,color: Colors.white)),),
               ],
             ),
           )),
           Container(
-            color: Colors.tealAccent[100],
+            color: Colors.black,
             child: Center(
                 child: GridView.builder(
               physics: NeverScrollableScrollPhysics(),
@@ -75,11 +75,12 @@ class _HomePageState extends State<HomePage> {
                     buttonTapped: () {
                       setState(() {
                         userQuestion = '';
+                        userAnswer = '';
                       });
                     },
                     bottonText: buttons[index],
-                    color: Colors.green,
-                    textColor: Colors.white,
+                    color: Colors.black45,
+                    textColor: Colors.green,
                   );
 
                   //Delete Button
@@ -91,8 +92,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     bottonText: buttons[index],
-                    color: Colors.red,
-                    textColor: Colors.white,
+                    color: Colors.black45,
+                    textColor: Colors.red,
                   );
                 }
 
@@ -105,8 +106,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     bottonText: buttons[index],
-                    color: Colors.teal,
-                    textColor: Colors.teal[50],
+                    color: Colors.black45,
+                    textColor: Colors.blue,
                   );
                 }
                 else if (index == buttons.length-2) {
@@ -117,8 +118,8 @@ class _HomePageState extends State<HomePage> {
                       });
                     },
                     bottonText: buttons[index],
-                    color: Colors.white,
-                    textColor: Colors.teal,
+                    color: Colors.black45,
+                    textColor: Colors.blue,
                   );
                 }
                 // Rest of the Buttons
@@ -131,10 +132,10 @@ class _HomePageState extends State<HomePage> {
                     },
                     bottonText: buttons[index],
                     color: isOperator(buttons[index])
-                        ? Colors.teal
-                        : Colors.teal[50],
+                        ? Colors.black45
+                        : Colors.black45,
                     textColor:
-                        isOperator(buttons[index]) ? Colors.white : Colors.teal,
+                        isOperator(buttons[index]) ? Colors.blue : Colors.white,
                   );
                 }
               },
